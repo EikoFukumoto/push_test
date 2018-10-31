@@ -1,0 +1,26 @@
+Sub SelectDB()
+ 
+Dim strFileName As String
+strFileName = "zumei.accdb"
+ 
+Dim adoCn As Object 'ADOコネクションオブジェクト
+Set adoCn = CreateObject("ADODB.Connection") 'ADOコネクションオブジェクトを作成
+adoCn.Open "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & "C:\Users\U546216\Documents" & "\" & strFileName & ";" 'Accessファイルに接続
+ 
+Dim adoRs As Object 'ADOレコードセットオブジェクト
+Set adoRs = CreateObject("ADODB.Recordset") 'ADOレコードセットオブジェクトを作成
+ 
+Dim strSQL As String
+strSQL = "SELECT * FROM zumei"
+ 
+adoRs.Open strSQL, adoCn 'SQLを実行して対象をRecordSetへ
+Worksheets(1).Range("A1").CopyFromRecordset adoRs
+ 
+adoRs.Close 'レコードセットのクローズ
+adoCn.Close 'コネクションのクローズ
+ 
+Set adoRs = Nothing
+Set adoCn = Nothing  'オブジェクトの破棄
+ 
+End Sub
+
