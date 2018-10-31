@@ -1,0 +1,9 @@
+http://gdipluscode.sakura.ne.jp/etc/exceltable.html
+
+http://www11.plala.or.jp/koma_Excel/contents11/mame11053/mame1105310.html
+
+https://tonari-it.com/excel-vba-access-sql-select/
+
+https://excel-databace.hatenablog.com/entry/connect-access
+
+https://ateitexe.com/vba-ado-not-reference/
